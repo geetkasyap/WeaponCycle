@@ -1,0 +1,123 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-debug",
+      "displayName": "Visual Studio 2022 x64 Debug",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/windows-debug",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON"
+      }
+    },
+    {
+      "name": "windows-release",
+      "displayName": "Visual Studio 2022 x64 Release",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/windows-release",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON"
+      }
+    },
+    {
+      "name": "windows-2026-debug",
+      "inherits": "windows-debug",
+      "displayName": "Visual Studio 2026 x64 Debug",
+      "generator": "Visual Studio 18 2026",
+      "binaryDir": "${sourceDir}/out/build/windows-2026-debug"
+    },
+    {
+      "name": "windows-2026-release",
+      "inherits": "windows-release",
+      "displayName": "Visual Studio 2026 x64 Release",
+      "generator": "Visual Studio 18 2026",
+      "binaryDir": "${sourceDir}/out/build/windows-2026-release"
+    },
+    {
+      "name": "ninja-debug",
+      "displayName": "Ninja x64 Debug",
+      "generator": "Ninja",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "binaryDir": "${sourceDir}/out/build/ninja-debug",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "cl",
+        "CMAKE_RC_COMPILER": "rc",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_TESTING": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-2026-debug",
+      "configurePreset": "windows-2026-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-2026-release",
+      "configurePreset": "windows-2026-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-debug",
+      "configurePreset": "windows-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-release",
+      "configurePreset": "windows-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "ninja-debug",
+      "configurePreset": "ninja-debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "windows-2026-debug",
+      "configurePreset": "windows-2026-debug",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "windows-2026-release",
+      "configurePreset": "windows-2026-release",
+      "configuration": "Release",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "windows-debug",
+      "configurePreset": "windows-debug",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "windows-release",
+      "configurePreset": "windows-release",
+      "configuration": "Release",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "ninja-debug",
+      "configurePreset": "ninja-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

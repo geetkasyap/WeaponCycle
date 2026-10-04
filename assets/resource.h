@@ -1,0 +1,6 @@
+#ifndef ORBITDECK_RESOURCE_H
+#define ORBITDECK_RESOURCE_H
+
+#define IDI_ORBITDECK 101
+
+#endif

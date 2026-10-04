@@ -1,0 +1,7 @@
+/out/
+/.vs/
+*.user
+/conversion/bin/
+/conversion/obj/
+/tests/ConversionEngine.Smoke/bin/
+/tests/ConversionEngine.Smoke/obj/

@@ -1,0 +1,5 @@
+#include <winuser.h>
+#include "resource.h"
+
+1 RT_MANIFEST "OrbitDeck.manifest"
+IDI_ORBITDECK ICON "orbitdeck.ico"

@@ -1,0 +1,2 @@
+# Development only; no Python or formatter is included in the portable app.
+clang-format==20.1.8

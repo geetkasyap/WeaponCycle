@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>WeaponCycle.Conversion</AssemblyName>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <FileeSource Condition="'$(FileeSource)' == ''">$(MSBuildThisFileDirectory)..\..\..\Filee</FileeSource>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="ConversionEngine.Smoke" />
+    <ProjectReference Include="$(FileeSource)\src\Filee.Core\Filee.Core.csproj" />
+    <ProjectReference Include="$(FileeSource)\src\Filee.Engines\Filee.Engines.csproj" />
+    <EmbeddedResource Include="$(FileeSource)\src\Filee.App\Assets\i18n\en.json"
+                      LogicalName="WeaponCycle.Conversion.en.json" />
+  </ItemGroup>
+  <Target Name="CheckFileeSource" BeforeTargets="PrepareForBuild"
+          Condition="!Exists('$(FileeSource)\src\Filee.Engines\Filee.Engines.csproj')">
+    <Error Text="Pass -p:FileeSource=the path to the Filee source checkout." />
+  </Target>
+</Project>

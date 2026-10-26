@@ -1,0 +1,12 @@
+diff --git a/src/Filee.Engines/Magick/ImageEncoder.cs b/src/Filee.Engines/Magick/ImageEncoder.cs
+--- a/src/Filee.Engines/Magick/ImageEncoder.cs
++++ b/src/Filee.Engines/Magick/ImageEncoder.cs
+@@ -348,6 +348,8 @@ internal static class ImageEncoder
+                 image.Settings.SetDefine(MagickFormat.Png, "compression-filter", "5");
+                 break;
+             case "tiff":
++                // A PNG palette's index depth is not its RGBA sample depth.
++                image.Depth = 8;
+                 image.Settings.Compression = options.TiffCompression switch
+                 {
+                     TiffCompression.Lzw => CompressionMethod.LZW,

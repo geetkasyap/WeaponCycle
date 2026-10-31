@@ -1,0 +1,1 @@
+Your desktop, one gesture away. Weapon Cycle is a free, open-source radial launcher for Windows: hold Shift+Space, point, release. One portable 1.2 MB exe, no installer, no admin rights, runs on home and office PCs alike. https://github.com/geetkasyap/WeaponCycle
